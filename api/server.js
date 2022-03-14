@@ -7,7 +7,7 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const { MongoClient } = require('mongodb');
 
-const url = process.env.DB_URL || 'mongodb+srv://chris:user@cluster0.ytgef.mongodb.net/Cluster0?retryWrites=true&w=majority';
+const url = process.env.DB_URL || 'mongodb+srv://chris:user@cluster0.ytgef.mongodb.net/productsDB?retryWrites=true&w=majority';
 
 let db;
 
@@ -27,6 +27,7 @@ async function getNextSequence(name) {
 
 async function addProduct(_, { product }) {
   const errors = [];
+  // eslint-disable-next-line prefer-object-spread
   const newProduct = Object.assign({}, product);
   newProduct.id = await getNextSequence('products');
   const result = await db.collection('products').insertOne(newProduct);
@@ -72,4 +73,3 @@ const port = process.env.API_SERVER_PORT || 3000;
     console.log('ERROR:', err);
   }
 }());
-
