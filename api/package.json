@@ -1,0 +1,24 @@
+{
+  "name": "api-assignment4",
+  "version": "1.0.0",
+  "description": "API Assignment 4 CS648.02",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Anorga",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "2.21",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "graphql": "^15.8.0",
+    "mongodb": "^4.4.1",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4"
+  }
+}
